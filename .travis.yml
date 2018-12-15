@@ -1,0 +1,26 @@
+language: python
+sudo: required
+dist: xenial
+
+python:
+  - "3.6"
+os:
+  - linux
+
+jobs:
+  include:
+    - stage: "Tests and Linting"
+      name: "Unit Tests"
+      install:
+        - pip install pipenv
+        - pipenv install --dev
+      script: coverage run -m unittest discover
+      after_success: coveralls
+
+    - name: "Linting"
+      install:
+        - pip install pipenv
+        - pipenv install --dev
+      script:
+        - mypy .
+        - flake8

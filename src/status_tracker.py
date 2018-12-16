@@ -14,14 +14,6 @@ class Status(Enum):
     WARNING = 2     # Some tests have been failed but not enough to warrant reporting an error
     ERROR = 3       # The app has displayed an issue consistently
 
-    @classmethod
-    def _has_value(cls, value: int):
-        return value in cls._value2member_map_
-
-    @classmethod
-    def _has_entry(cls, entry: str):
-        return entry in cls.__members__
-
 
 class StatusChange(Enum):
     INVALID = -1
@@ -30,14 +22,6 @@ class StatusChange(Enum):
     WARNING_RESOLVED = 2
     NEW_ERROR = 3
     NEW_WARNING = 4
-
-    @classmethod
-    def _has_value(cls, value: int):
-        return value in cls._value2member_map_
-
-    @classmethod
-    def _has_entry(cls, entry: str):
-        return entry in cls.__members__
 
 
 class StatusTracker:

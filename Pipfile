@@ -13,6 +13,7 @@ coveralls = "*"
 mypy = "*"
 "flake8" = "*"
 freezegun = "*"
+parameterized = "*"
 
 [requires]
 python_version = "3.6"

@@ -60,3 +60,6 @@ target/
 # Pycharm
 .idea/
 .mypy_cache/
+
+# Data folder
+data/

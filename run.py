@@ -29,9 +29,9 @@ if __name__ == "__main__":
     json_writer = JsonEntryWriter(os.path.join(os.path.dirname(os.path.realpath(__file__)), "data", "test_data.json"))
     notifier = EntryWriterNotifier(json_writer)
     monitor_config = {
-        "test_interval": 40,
-        "retry_interval": 5,
-        "error_interval": 10
+        "test_interval": 300,
+        "retry_interval": 10,
+        "error_interval": 60
     }
     monitor = Monitor(scheduler, connection_tester, status_tracker, notifier, monitor_config)
 

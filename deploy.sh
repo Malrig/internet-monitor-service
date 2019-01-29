@@ -15,7 +15,7 @@ staging_deploy=false
 while :; do
   case $1 in
     -c|--commit_id)       # Takes an option argument; ensure it has been specified.
-      if [ "$2" ]; then
+      if [[ "$2" ]]; then
         commit_id=$2
         shift
       else
@@ -44,28 +44,12 @@ while :; do
 done
 
 # The commit ID is required otherwise don't know what to deploy.
-if [ -z "commit_id" ]; then
+if [[ -z "commit_id" ]]; then
   die 'ERROR: you must provide a value for the commit ID using "--commit_id" or "-c".'
 fi
 
 
 ssh -p 22022 $SSH_LOGIN_USERNAME@georgeblackburn.co.uk << EOF
-  pwd
-  cd /var/WebApps/internet-monitor-service/
-  pwd
-
-  container_name=monitor
-  image_name=internet-monitor
-
-  git fetch
-  git checkout $commit_id
-
-  echo "Finished checkout"
-
-  sudo docker rm -f $container_name
-  echo "Finished removing"
-  sudo docker build -t $image_name .
-  echo "Finished building"
-  sudo docker run -d --name $container_name $image_name
-  echo "Finished deploying"
+  cd $LIVE_DEPLOY_DIR
+  eval $DEPLOY_SCRIPT
 EOF

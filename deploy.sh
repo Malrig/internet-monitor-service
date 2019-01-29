@@ -60,7 +60,12 @@ ssh -p 22022 $SSH_LOGIN_USERNAME@georgeblackburn.co.uk << EOF
   git fetch
   git checkout $commit_id
 
+  echo "Finished checkout"
+
   sudo docker rm -f $container_name
+  echo "Finished removing"
   sudo docker build -t $image_name .
+  echo "Finished building"
   sudo docker run -d --name $container_name $image_name
+  echo "Finished deploying"
 EOF

@@ -40,6 +40,6 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
-          ssh -p $DEPLOY_PORT $SSH_LOGIN_USERNAME@$DEPLOY_SERVER -t "bash $DEPLOY_SCRIPT -c $TRAVIS_COMMIT -d $LIVE_DEPLOY_DIR -n $DCK_CNT_NAME -i DCK_IMAGE_NAME"
+          ssh -p $DEPLOY_PORT $SSH_LOGIN_USERNAME@$DEPLOY_SERVER -t "bash $DEPLOY_SCRIPT -c $TRAVIS_COMMIT -d $LIVE_DEPLOY_DIR -n $DCK_CNT_NAME -i $DCK_IMAGE_NAME"
         on:
           branch: master

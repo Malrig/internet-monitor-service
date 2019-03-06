@@ -1,7 +1,4 @@
 import unittest
-import docker
-# import os
-# import json
 from datetime import datetime
 
 from src.notifiers.mongo_entry_writer import MongoEntryWriter, ConnectionDoc

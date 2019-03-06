@@ -15,8 +15,6 @@ mypy = "*"
 "flake8" = "*"
 freezegun = "*"
 parameterized = "*"
-mongomock = "*"
-mockupdb = "*"
 docker = "*"
 
 [requires]

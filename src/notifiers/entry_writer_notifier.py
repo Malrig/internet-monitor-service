@@ -4,7 +4,7 @@ import logging
 from enum import Enum
 from datetime import datetime
 
-from src.connection_entry import ConnectionEntry
+from src.notifiers.connection_entry import ConnectionEntry
 from src.status_tracker import Status, StatusChange
 
 logger = logging.getLogger(__name__)

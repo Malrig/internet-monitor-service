@@ -1,6 +1,6 @@
 import logging
 import json
-from src.connection_entry import ConnectionEntry
+from src.notifiers.connection_entry import ConnectionEntry
 from src.notifiers.entry_writer_notifier import EntryWriter, FileType, prepare_data_file
 
 logger = logging.getLogger(__name__)

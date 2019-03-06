@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 
 from src.notifiers.json_entry_writer import JsonEntryWriter, FileType
 from src.status_tracker import Status, StatusChange
-from src.connection_entry import ConnectionEntry
+from src.notifiers.connection_entry import ConnectionEntry
 
 connection_entry_data = [
     {

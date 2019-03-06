@@ -1,6 +1,6 @@
 import unittest
 from datetime import datetime
-from src.connection_entry import ConnectionEntry
+from src.notifiers.connection_entry import ConnectionEntry
 from src.status_tracker import Status, StatusChange
 
 

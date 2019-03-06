@@ -6,7 +6,7 @@ from unittest.mock import MagicMock
 
 from src.notifiers.entry_writer_notifier import EntryWriterNotifier, EntryWriter, FileType, prepare_data_file
 from src.status_tracker import Status, StatusChange
-from src.connection_entry import ConnectionEntry
+from src.notifiers.connection_entry import ConnectionEntry
 
 
 class TestEntryWriterNotifier(unittest.TestCase):
